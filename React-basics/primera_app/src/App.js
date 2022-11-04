@@ -9,7 +9,8 @@ import Bag from './components/children_ejemplo/Bag';
 import Apples from './components/children_ejemplo/Apples';
 import Pears from './components/children_ejemplo/Pears';
 import Logo from './components/Logo';
-
+import ModeToggler from './components/ModeToggler';
+import NumberGuessing from './components/NumberGuessing';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
       <Intro1 firstName="Greetings!"/>
       <Intro2 />
       <Intro3 />
+      <NumberGuessing />
+      <ModeToggler />
       <Bag>
         <Apples color="yellow" number="5" />
         <Pears friend="Peter" />
