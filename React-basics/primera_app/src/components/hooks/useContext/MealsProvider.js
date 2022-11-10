@@ -5,7 +5,7 @@ const MealsContext = createContext();
 const todayMeals = ["Baked Beans", "Baked Sweet Potatoes", "Baked Potatoes"];
 
 const MealsProvider = ({children}) => {
-    const [meals, setMealsList] = useState(todayMeals);
+    const [meals] = useState(todayMeals);
 
     return(
         <MealsContext.Provider value={{meals}} >
