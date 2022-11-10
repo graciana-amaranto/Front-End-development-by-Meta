@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import {Routes, Route, Link} from 'react-router-dom';
 
 
 
 import './App.css';
-import Nav from './components/Nav';
+
 import Intro1 from './components/Intro1';
 import Footer from './components/Footer';
 import Bag from './components/children_ejemplo/Bag';
@@ -22,6 +23,8 @@ import Wallet from './components/hooks/Wallet';
 import Fruits from './components/ejercicio-state-stateless/Fruits';
 import FruitsCounter from './components/ejercicio-state-stateless/FruitsCounter';
 
+import Navbar from './components/navbar/Navbar';
+
 
 
 function App() {
@@ -34,9 +37,9 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
-      <Promo />
+      <Navbar />
       <Intro1 firstName="Greetings!"/>
+      <Promo />
       <NumberGuessing />
       <RegisterForm />
       <TextInputWithFocusButton />
