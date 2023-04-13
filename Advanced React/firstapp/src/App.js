@@ -1,5 +1,8 @@
 import "./App.css";
 import DessertsList from "./components/DessertsList";
+import FeedbackForm from "./components/forms/FeedbackForm";
+import Form from "./components/forms/Form";
+import RegistrationForm from "./components/forms/registrationform/RegistrationForm";
 
 const desserts = [
   {
@@ -37,6 +40,9 @@ function App() {   //primero uso map, y dentro pongo lo que quiero mostrar de la
       {listItems}
       <h2>List of low calorie desserts:</h2>
       <DessertsList data={desserts}/>
+      <Form />
+      <FeedbackForm />
+      <RegistrationForm />
     </div>
   );
 }
