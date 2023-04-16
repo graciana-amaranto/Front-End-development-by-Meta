@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import DessertsList from "./components/DessertsList";
 import FeedbackForm from "./components/forms/FeedbackForm";
@@ -5,6 +6,8 @@ import Form from "./components/forms/Form";
 import RegistrationForm from "./components/forms/registrationform/RegistrationForm";
 import Switch from "./components/SwitchTheme";
 import { ThemeProvider, useTheme} from "./components/ThemeContext";
+import GoalForm from "./components/hooks/goalsList/GoalForm";
+import ListOfGoals from "./components/hooks/goalsList/ListOfGoals";
 
 const DessertStyle = ({children}) => {
   const {theme} = useTheme();
@@ -109,6 +112,9 @@ function App() {   //primero uso map, y dentro pongo lo que quiero mostrar de la
 
   const {theme} = useTheme();
 
+  const [allGoals, updateAllGoals] = useState([]);
+  function addGoal(goal) {updateAllGoals([...allGoals, goal]); }
+
   return (
     <div className="App" style={{backgroundColor: theme === "light" ? "white" : "black"}}>
       <Header />
@@ -119,6 +125,8 @@ function App() {   //primero uso map, y dentro pongo lo que quiero mostrar de la
       </DessertStyle>
        <h2>List of low calorie desserts:</h2> 
       <DessertsList data={desserts}/> 
+      <GoalForm onAdd={addGoal} />
+      <ListOfGoals allGoals={allGoals} />
       <Form />
       <FeedbackForm />
       <RegistrationForm />
