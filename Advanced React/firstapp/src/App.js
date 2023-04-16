@@ -8,6 +8,7 @@ import Switch from "./components/SwitchTheme";
 import { ThemeProvider, useTheme} from "./components/ThemeContext";
 import GoalForm from "./components/hooks/goalsList/GoalForm";
 import ListOfGoals from "./components/hooks/goalsList/ListOfGoals";
+import GiftCard from "./components/hooks/giftcard/GiftCard";
 
 const DessertStyle = ({children}) => {
   const {theme} = useTheme();
@@ -64,7 +65,8 @@ const Paragraph = ({children}) => {
   return(
     <p
       style={{
-        color: theme === "light" ? "black" : "white"
+        color: theme === "light" ? "black" : "white",
+        borderColor: "red"
       }}
     >
       {children}
@@ -127,6 +129,7 @@ function App() {   //primero uso map, y dentro pongo lo que quiero mostrar de la
       <DessertsList data={desserts}/> 
       <GoalForm onAdd={addGoal} />
       <ListOfGoals allGoals={allGoals} />
+      <GiftCard style={Paragraph}/>
       <Form />
       <FeedbackForm />
       <RegistrationForm />
