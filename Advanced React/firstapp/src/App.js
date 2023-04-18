@@ -9,6 +9,7 @@ import { ThemeProvider, useTheme} from "./components/ThemeContext";
 import GoalForm from "./components/hooks/goalsList/GoalForm";
 import ListOfGoals from "./components/hooks/goalsList/ListOfGoals";
 import GiftCard from "./components/hooks/giftcard/GiftCard";
+import WelcomeMessage from "./components/hooks/WelcomeMessage";
 
 const DessertStyle = ({children}) => {
   const {theme} = useTheme();
@@ -120,6 +121,7 @@ function App() {   //primero uso map, y dentro pongo lo que quiero mostrar de la
   return (
     <div className="App" style={{backgroundColor: theme === "light" ? "white" : "black"}}>
       <Header />
+      <WelcomeMessage />
       <Page />
       <DessertStyle>
         <h2>List of all desserts and created dates:</h2>

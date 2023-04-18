@@ -21,7 +21,6 @@ function GiftCard(props) {
                 }
             });
         }
-        props.style(giftCard);
 
         return(
             <div style={{padding: '40px'}}>
